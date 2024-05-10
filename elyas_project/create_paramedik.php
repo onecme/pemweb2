@@ -71,7 +71,7 @@ $unit_kerjas = $dbh->query($query);
                     </div>
                     <div class='form-check form-check-inline'>
                         <input id="dokter_kecantikan" name="kategori" type="radio" required="required"
-                            class="form-check-input" value="Dokter Gigi">
+                            class="form-check-input" value="Dokter Kecantikan">
                         <label for="dokter_kecantikan" class="form-check-label">Dokter Kecantikan</label>
                     </div>
                 </div>
