@@ -16,6 +16,6 @@ if (isset($_POST['submit'])) {
         $_SESSION['user'] = $user->fetch();
         header("location: index.php");
     } else {
-        header("location: index.php");
+        header("location: login.php");
     }
 }
