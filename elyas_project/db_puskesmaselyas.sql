@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2024 at 12:31 PM
+-- Generation Time: May 10, 2024 at 10:03 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -69,7 +69,8 @@ CREATE TABLE `paramedik` (
 INSERT INTO `paramedik` (`id`, `nama`, `gender`, `tmp_lahir`, `tgl_lahir`, `kategori`, `telpon`, `alamat`, `unit_kerja_id`) VALUES
 (5, 'Bony', 'P', 'Bogor', '1995-07-09', 'Dokter Gigi', '085922929921', 'Jalan Stadiun Pekansari', 1),
 (6, 'Mamat Alkatiri', 'L', 'Fak Fak', '1992-07-09', 'Dokter Gigi', '0878707228000', 'Jalan Cendrawasih', 2),
-(7, 'Boyke', 'L', 'Tangerang', '1987-02-09', 'Dokter Bedah Umum', '0878707228111', 'Jalan Pasar Kamis', 3);
+(7, 'Boyke', 'L', 'Tangerang', '1987-02-09', 'Dokter Bedah Umum', '0878707228111', 'Jalan Pasar Kamis', 3),
+(9, 'DR. Rahman Amin', 'L', 'Papua Barat', '1991-02-10', 'Dokter Umum', '08592292932', 'Jalan Merak', 3);
 
 -- --------------------------------------------------------
 
@@ -122,8 +123,9 @@ CREATE TABLE `periksa` (
 INSERT INTO `periksa` (`id`, `tanggal`, `berat`, `tinggi`, `tensi`, `keterangan`, `pasien_id`, `dokter_id`) VALUES
 (1, '2024-05-06', 58, 165, '98', 'Cacar', 19, 5),
 (2, '2024-05-03', 55, 165, '2844', 'Batuk Pilek', 20, 6),
-(3, '2024-05-09', 56, 170, '100', 'Muntah ber', 21, 5),
-(6, '2024-05-09', 78, 178, '56', 'Gigi Berlubang', 20, 6);
+(3, '2024-05-10', 57, 172, '90', 'Demam', 20, 6),
+(8, '2024-05-10', 60, 178, '67', 'Batuk Pilek', 21, 9),
+(9, '2024-05-10', 82, 172, '52', 'Batuk Pilek', 21, 9);
 
 -- --------------------------------------------------------
 
@@ -163,7 +165,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `nama`) VALUES
-(1, 'Helios', '123', 'Hilmi');
+(1, 'kamidi', '12345678', 'slamet');
 
 --
 -- Indexes for dumped tables
@@ -224,19 +226,19 @@ ALTER TABLE `kelurahan`
 -- AUTO_INCREMENT for table `paramedik`
 --
 ALTER TABLE `paramedik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `periksa`
 --
 ALTER TABLE `periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `unit_kerja`
