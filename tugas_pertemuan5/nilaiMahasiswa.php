@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST" && isset($_POST['submit']) ){
       </div>
     </div>
     <div class="form-group row mt-2">
+<<<<<<< HEAD
     <label for="mataKuliah" class="col-4 col-form-label">Mata Kuliah</label>
     <div class="col-8">
         <select id="mataKuliah" name="mataKuliah" class="form-select" required="required">
@@ -60,6 +61,19 @@ if ($_SERVER["REQUEST_METHOD"]== "POST" && isset($_POST['submit']) ){
         </select>
     </div>
 </div>
+=======
+      <label for="mataKuliah" class="col-4 col-form-label">Mata Kuliah</label>
+      <div class="col-8">
+        <select id="mataKuliah" name="mataKuliah" class="form-select" required="required">
+          <option value="">Pilih Mata Kuliah</option>
+          <option value="Pemrograman Web 2">Pemrograman Web 2</option>
+          <option value="Basis Data">Basis Data</option>
+          <option value="Dasar-Dasar Pemrograman">Dasar-Dasar Pemrograman</option>
+          <option value="Statistika">Statistika</option>
+        </select>
+      </div>
+    </div>
+>>>>>>> d7ac66ddeec2cd58a31fb87cdcbe32d8444ad53a
     <div class="form-group row mt-2">
       <label for="nilai" class="col-4 col-form-label">Nilai</label>
       <div class="col-8">
