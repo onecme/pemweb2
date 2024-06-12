@@ -17,8 +17,12 @@
                     <td>{{$kelurahan->kecamatan_nama}}</td>
                     <td>
                         <a href="{{url('dashboard/kelurahan/show', $kelurahan->id)}}" class="text-primary"><i class="far fa-eye"></i> Lihat</a> |
-                        <a href="#" class="text-warning"><i class="far fa-edit"></i> Edit</a> |
-                        <a href="#" class="text-danger"><i class="far fa-trash-alt"></i> Hapus</a>
+                        <a href="{{url('dashboard/kelurahan/edit', $kelurahan->id)}}" class="text-warning"><i class="far fa-edit"></i> Edit</a> |
+                        <form action="{{url('dashboard/kelurahan/destroy', $kelurahan->id)}}" method="post" class="d-inline">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin ingin menghapus data?')"><i class="far fa-trash-alt"></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

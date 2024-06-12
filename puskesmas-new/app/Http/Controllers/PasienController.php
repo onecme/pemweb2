@@ -60,7 +60,9 @@ class PasienController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pasien = Pasien::find($id);
+        $kelurahans = Kelurahan::all(); // Fetch the list of kelurahans
+        return view('admin.pasien.edit', compact('pasien', 'kelurahans'));
     }
 
     /**
@@ -68,7 +70,20 @@ class PasienController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'kode' => 'required|string',
+            'nama' => 'required|string',
+            'tmp_lahir' => 'required|string',
+            'tgl_lahir' => 'required|date',
+            'gender' => 'required|string|in:L,P',
+            'email' => 'required|string|email',
+            'alamat' => 'required|string',
+            'kelurahan_id' => 'required|integer|exists:kelurahans,id'
+        ]);
+         // Setelah divalidasi kemudian mengambil data
+         $pasien = Pasien::find($id);
+         $pasien->update($validated);
+         return redirect('dashboard/pasien')-> with('Update', 'Data Berhasil diperbarui');
     }
 
     /**
@@ -76,6 +91,8 @@ class PasienController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pasien = Pasien::find($id);
+        $pasien->delete();
+        return redirect('dashboard/pasien')-> with('Delete', 'Data Berhasil dihapus');
     }
 }
