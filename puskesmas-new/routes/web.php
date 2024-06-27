@@ -46,7 +46,7 @@ Route::middleware('auth')->group(function () {
 
 
         });
-        Route::prefix('pasien')->group(function(){
+        Route::middleware('admin')->prefix('pasien')->group(function(){
 
             //pasien
             Route::get('/', [PasienController::class, 'index']);
