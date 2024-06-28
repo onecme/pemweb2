@@ -34,15 +34,15 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [KelurahanController::class, 'index']);
             
             // Pratikum Laravel 4
-            Route::get('/create', [KelurahanController::class, 'create']);
+            Route::get('/create', [KelurahanController::class, 'create'])->middleware('admin');
             Route::post('/store', [KelurahanController::class, 'store']);
             Route::get('/show/{id}', [KelurahanController::class, 'show']);
             
             
             // pratikum Larvel 5
-            Route::get('/edit/{id}', [KelurahanController::class, 'edit']);
+            Route::get('/edit/{id}', [KelurahanController::class, 'edit'])->middleware('admin');
             Route::put('/update/{id}', [KelurahanController::class, 'update']);
-            Route::delete('/destroy/{id}', [KelurahanController::class, 'destroy']);
+            Route::delete('/destroy/{id}', [KelurahanController::class, 'destroy'])->middleware('admin');
 
 
         });
